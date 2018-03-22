@@ -2,6 +2,7 @@
 
 namespace XStatic\Test;
 
+use PHPUnit\Framework\TestCase;
 use XStatic\StaticProxy;
 use XStatic\Test\Fixture\QueueProxy;
 
@@ -9,7 +10,7 @@ use XStatic\Test\Fixture\QueueProxy;
  * @covers \XStatic\StaticProxy
  *
  */
-class StaticProxyTest extends \PHPUnit_Framework_TestCase
+class StaticProxyTest extends TestCase
 {
     /**
      * @expectedException \BadMethodCallException

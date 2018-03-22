@@ -2,17 +2,18 @@
 
 namespace XStatic\Test;
 
+use PHPUnit\Framework\TestCase;
 use XStatic\ProxyManager;
 
 /**
  * @covers \XStatic\ProxyManager
  */
-class ProxyManagerTest extends \PHPUnit_Framework_TestCase
+class ProxyManagerTest extends TestCase
 {
     public function testCanCreateStaticProxies()
     {
         // Instantiate XStatic and use setContainer
-        $proxyManager = new ProxyManager($this->getMock('Interop\Container\ContainerInterface'));
+        $proxyManager = new ProxyManager($this->createMock('Interop\Container\ContainerInterface'));
         $proxyManager->setContainer(new Fixture\Container(array('queue' => new \SplQueue)));
 
         // Register a proxy and enable them

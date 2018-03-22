@@ -2,12 +2,13 @@
 
 namespace XStatic\Test;
 
+use PHPUnit\Framework\TestCase;
 use XStatic\AliasLoader;
 
 /**
  * @covers \XStatic\AliasLoader
  */
-class AliasLoaderTest extends \PHPUnit_Framework_TestCase
+class AliasLoaderTest extends TestCase
 {
     public function testCanAddAliases()
     {
@@ -25,7 +26,7 @@ class AliasLoaderTest extends \PHPUnit_Framework_TestCase
         );
 
         // Shouldn't be able to add the same alias again
-        $this->setExpectedException('RuntimeException');
+        $this->expectException('RuntimeException');
         $loader->addAlias('Foo', 'Fake\Bar');
     }
 
